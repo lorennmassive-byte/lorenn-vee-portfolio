@@ -217,21 +217,21 @@ const Expertise = () => {
     },
     { 
       title: 'Workflow Orchestration', 
-      desc: 'Complex API integrations and native GHL logic that replaces human error with algorithmic precision.',
+      desc: 'High-level automation using Zapier, Make, and n8n to create recursive, error-free operations that scale indefinitely.',
       icon: <Cpu className="text-accent" />,
-      tag: 'AUTOMATION'
+      tag: 'ADVANCED AUTOMATION'
     },
     { 
-      title: 'CRM Infrastructure', 
-      desc: 'Seamless data migrations, sub-account snapshots, and multi-location management for elite agencies.',
+      title: 'API & CRM Integration', 
+      desc: 'Bridging GHL with external ecosystems through custom API protocols and seamless multi-platform data synchronization.',
       icon: <TrendingUp className="text-indigo-300" />,
-      tag: 'SCALABILITY'
+      tag: 'SYSTEM ARCHITECTURE'
     },
     { 
-      title: 'Strategic Ops', 
-      desc: 'High-level decision support and administrative triage for executives navigating rapid growth.',
+      title: 'Custom Technical Stack', 
+      desc: 'Bespoke sub-account customization leveraging JavaScript, HTML, and CSS to push GHL beyond its native constraints.',
       icon: <ShieldCheck className="text-white" />,
-      tag: 'STABILITY'
+      tag: 'DEVELOPMENT'
     },
   ];
 
@@ -485,6 +485,10 @@ const Footer = () => {
 };
 
 export default function App() {
+  useEffect(() => {
+    document.title = 'Lorenn Vee - GHL Expert';
+  }, []);
+
   return (
     <div className="bg-bg text-white font-sans selection:bg-brand/30 selection:text-brand overflow-x-hidden">
       <Nav />
