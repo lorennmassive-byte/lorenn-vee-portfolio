@@ -178,23 +178,42 @@ const Hero = () => {
           transition={{ duration: 1.2, ease: [0.23, 1, 0.32, 1] }}
           className="lg:col-span-4 hidden lg:block relative"
         >
-          <div className="relative aspect-[3/4] rounded-[4rem] overflow-hidden border-[1px] border-white/10 group">
+          <div className="portrait-glow group relative">
             <img 
-              src="https://picsum.photos/seed/cyber/1000/1333" 
-              alt="Portrait" 
-              className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100"
+              src="/src/portrait.png" 
+              alt="Lorenn Vee" 
+              className="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-1000 scale-105 group-hover:scale-100"
+              onError={(e) => {
+                // Fallback to a themed stock image if portrait.png isn't uploaded yet
+                (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=1000&h=1333";
+              }}
               referrerPolicy="no-referrer"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-bg via-transparent to-transparent opacity-60" />
             
+            {/* High-Tech ID Scanning Overlay */}
+            <div className="absolute inset-0 border border-brand/20 rounded-[4rem] pointer-events-none overflow-hidden">
+               <motion.div 
+                 animate={{ y: ['0%', '100%', '0%'] }}
+                 transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
+                 className="w-full h-px bg-brand/50 shadow-[0_0_15px_rgba(99,102,241,0.8)]"
+               />
+               <div className="absolute top-0 left-0 w-20 h-20 border-t-2 border-l-2 border-brand/40 m-8 rounded-tl-2xl" />
+               <div className="absolute top-0 right-0 w-20 h-20 border-t-2 border-r-2 border-brand/40 m-8 rounded-tr-2xl" />
+               <div className="absolute bottom-0 left-0 w-20 h-20 border-b-2 border-l-2 border-brand/40 m-8 rounded-bl-2xl" />
+               <div className="absolute bottom-0 right-0 w-20 h-20 border-b-2 border-r-2 border-brand/40 m-8 rounded-br-2xl" />
+            </div>
+
             {/* Overlay Info Card */}
-            <div className="absolute bottom-10 left-10 right-10 glass p-6 rounded-3xl translate-y-2 group-hover:translate-y-0 transition-transform">
+            <div className="absolute bottom-10 left-10 right-10 glass p-6 rounded-3xl translate-y-2 group-hover:translate-y-0 transition-all duration-500">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand">Status</span>
-                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-accent">In-Sync</span>
+                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-brand">Access status</span>
+                <div className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 bg-accent rounded-full animate-pulse" />
+                  <span className="text-[9px] font-bold uppercase tracking-[0.1em] text-accent">Active Protocol</span>
+                </div>
               </div>
-              <p className="text-xs text-white/60 font-medium leading-relaxed">
-                "We don't build software, we build leverage."
+              <p className="text-xs text-white/50 font-medium leading-relaxed italic">
+                "Scaling agencies through algorithmic precision & strategic architecture."
               </p>
             </div>
           </div>
@@ -484,6 +503,29 @@ const Footer = () => {
   );
 };
 
+const Marquee = () => {
+  const tools = ['Zapier', 'Make.com', 'n8n', 'GoHighLevel', 'JavaScript', 'HTML5', 'Tailwind CSS', 'React', 'API Architecture', 'Workflow Logic'];
+  
+  return (
+    <div className="py-12 border-y border-line overflow-hidden bg-bg relative">
+      <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-bg to-transparent z-10" />
+      <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-bg to-transparent z-10" />
+      
+      <motion.div 
+        animate={{ x: [0, -1000] }}
+        transition={{ repeat: Infinity, duration: 30, ease: 'linear' }}
+        className="flex gap-20 items-center whitespace-nowrap"
+      >
+        {[...tools, ...tools].map((tool, i) => (
+          <span key={i} className="text-4xl lg:text-6xl font-black text-white/5 uppercase tracking-tighter hover:text-brand/20 transition-colors cursor-default">
+            {tool}
+          </span>
+        ))}
+      </motion.div>
+    </div>
+  );
+};
+
 export default function App() {
   useEffect(() => {
     document.title = 'Lorenn Vee - GHL Expert';
@@ -493,6 +535,7 @@ export default function App() {
     <div className="bg-bg text-white font-sans selection:bg-brand/30 selection:text-brand overflow-x-hidden">
       <Nav />
       <Hero />
+      <Marquee />
       <Expertise />
       <Metrics />
       <Testimonials />

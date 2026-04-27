@@ -24,6 +24,17 @@
   @apply bg-white/[0.03] backdrop-blur-xl border border-white/[0.05];
 }
 
+.portrait-glow {
+  @apply relative overflow-hidden rounded-[4rem];
+  box-shadow: 0 0 80px -20px rgba(99, 102, 241, 0.3);
+}
+
+.portrait-glow::after {
+  content: "";
+  @apply absolute inset-0 pointer-events-none;
+  background: linear-gradient(to top, var(--color-bg), transparent 60%);
+}
+
 .text-glow {
   text-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
 }
