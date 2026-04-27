@@ -178,29 +178,45 @@ const Hero = () => {
           transition={{ duration: 1.2, ease: [0.23, 1, 0.32, 1] }}
           className="lg:col-span-4 hidden lg:block relative"
         >
-          <div className="portrait-glow group relative">
+          <div className="portrait-glow group relative border border-white/5 overflow-hidden">
+            {/* Terminal Top Bar */}
+            <div className="absolute top-0 left-0 right-0 h-6 bg-white/5 backdrop-blur-md border-b border-white/10 flex items-center px-4 gap-1.5 z-20">
+              <div className="w-1.5 h-1.5 rounded-full bg-red-500/30" />
+              <div className="w-1.5 h-1.5 rounded-full bg-yellow-500/30" />
+              <div className="w-1.5 h-1.5 rounded-full bg-green-500/30" />
+              <span className="text-[6px] font-black tracking-widest text-white/30 uppercase ml-2 font-mono">Workstation.exe</span>
+            </div>
+
             <img 
-              src="/src/portrait.png" 
-              alt="Lorenn Vee" 
-              className="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-1000 scale-105 group-hover:scale-100"
-              onError={(e) => {
-                // Fallback to a themed stock image if portrait.png isn't uploaded yet
-                (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=1000&h=1333";
-              }}
+              src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1000&h=1333"
+              alt="High-Tech Workstation" 
+              className="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-1000 scale-110 group-hover:scale-100 mt-6"
               referrerPolicy="no-referrer"
             />
             
-            {/* High-Tech ID Scanning Overlay */}
+            {/* Elite Technical Overlay */}
             <div className="absolute inset-0 border border-brand/20 rounded-[4rem] pointer-events-none overflow-hidden">
                <motion.div 
                  animate={{ y: ['0%', '100%', '0%'] }}
                  transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
-                 className="w-full h-px bg-brand/50 shadow-[0_0_15px_rgba(99,102,241,0.8)]"
+                 className="w-full h-px bg-brand/50 shadow-[0_0_15px_rgba(99,102,241,0.8)] z-10"
                />
+               
+               {/* Metadata Scanning Tags */}
+               <div className="absolute top-12 left-12 space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <div className="px-2 py-1 bg-brand/20 border border-brand/40 rounded text-[6px] font-black uppercase text-brand">V_IDENTITY_VERIFIED</div>
+                  <div className="px-2 py-1 bg-white/5 border border-white/10 rounded text-[6px] font-black uppercase text-white/40">S_LOC: REMOTE_OPS</div>
+               </div>
+
                <div className="absolute top-0 left-0 w-20 h-20 border-t-2 border-l-2 border-brand/40 m-8 rounded-tl-2xl" />
                <div className="absolute top-0 right-0 w-20 h-20 border-t-2 border-r-2 border-brand/40 m-8 rounded-tr-2xl" />
                <div className="absolute bottom-0 left-0 w-20 h-20 border-b-2 border-l-2 border-brand/40 m-8 rounded-bl-2xl" />
                <div className="absolute bottom-0 right-0 w-20 h-20 border-b-2 border-r-2 border-brand/40 m-8 rounded-br-2xl" />
+            </div>
+
+            {/* Status Overlay */}
+            <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex items-center justify-center pointer-events-none opacity-20 group-hover:opacity-5 transition-opacity">
+               <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-white/5 rotate-90 whitespace-nowrap">UPLOAD_PENDING</span>
             </div>
 
             {/* Overlay Info Card */}
@@ -238,19 +254,19 @@ const Expertise = () => {
       title: 'Workflow Orchestration', 
       desc: 'High-level automation using Zapier, Make, and n8n to create recursive, error-free operations that scale indefinitely.',
       icon: <Cpu className="text-accent" />,
-      tag: 'ADVANCED AUTOMATION'
+      tag: 'AUTOMATION ARCHITECTURE'
     },
     { 
       title: 'API & CRM Integration', 
-      desc: 'Bridging GHL with external ecosystems through custom API protocols and seamless multi-platform data synchronization.',
+      desc: 'Seamlessly bridging GHL with external ecosystems through secure API protocols and multi-platform data synchronization.',
       icon: <TrendingUp className="text-indigo-300" />,
-      tag: 'SYSTEM ARCHITECTURE'
+      tag: 'INTEGRATED SYSTEMS'
     },
     { 
-      title: 'Custom Technical Stack', 
-      desc: 'Bespoke sub-account customization leveraging JavaScript, HTML, and CSS to push GHL beyond its native constraints.',
+      title: 'Technical Custom Stack', 
+      desc: 'Bespoke sub-account customization leveraging JavaScript, HTML, and CSS to push GHL ecosystems beyond native constraints.',
       icon: <ShieldCheck className="text-white" />,
-      tag: 'DEVELOPMENT'
+      tag: 'CUSTOM DEVELOPMENT'
     },
   ];
 
@@ -356,8 +372,8 @@ const ContactArea = () => {
 
   const validate = () => {
     const newErrors: Record<string, string> = {};
-    if (!formData.name.trim()) newErrors.name = 'Identity required';
-    if (!formData.email.includes('@')) newErrors.email = 'Invalid transmission address';
+    if (!formData.name.trim()) newErrors.name = 'Name required';
+    if (!formData.email.includes('@')) newErrors.email = 'Invalid email address';
     if (formData.message.length < 10) newErrors.message = 'Detail required (min 10 chars)';
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -372,7 +388,7 @@ const ContactArea = () => {
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...formData, subject: 'Transmission via Portfolio' })
+        body: JSON.stringify({ ...formData, subject: 'Inquiry via Portfolio' })
       });
 
       if (response.ok) {
@@ -381,7 +397,7 @@ const ContactArea = () => {
         setTimeout(() => setSent(false), 5000);
       }
     } catch (err) {
-      setErrors({ submit: 'Link failure. Check connection.' });
+      setErrors({ submit: 'Failure. Check connection.' });
     } finally {
       setIsSubmitting(false);
     }
@@ -434,7 +450,7 @@ const ContactArea = () => {
                 value={formData.message}
                 onChange={e => setFormData({...formData, message: e.target.value})}
                 placeholder="Briefly describe the bottleneck..."
-                className="w-full bg-white/[0.05] border border-white/5 rounded-2xl p-5 text-sm focus:border-brand focus:outline-none transition-all placeholder:text-white/10 resize-none text-white"
+                className="w-full bg-white/[0.05] border border-white/5 rounded-2xl p-5 text-sm focus:border-brand focus:outline-none transition-all placeholder:text-white/10 resize-none text-white focus:bg-white/[0.08]"
               />
               {errors.message && <span className="text-[9px] text-brand font-bold uppercase tracking-widest ml-2">{errors.message}</span>}
             </div>
@@ -504,25 +520,63 @@ const Footer = () => {
 };
 
 const Marquee = () => {
-  const tools = ['Zapier', 'Make.com', 'n8n', 'GoHighLevel', 'JavaScript', 'HTML5', 'Tailwind CSS', 'React', 'API Architecture', 'Workflow Logic'];
+  const tools = ['Zapier', 'Make.com', 'n8n', 'GoHighLevel', 'JavaScript', 'HTML5', 'CSS3', 'API Design', 'CRM Logic', 'Automations', 'Workflow Architecture'];
   
   return (
-    <div className="py-12 border-y border-line overflow-hidden bg-bg relative">
+    <div className="py-16 border-y border-line overflow-hidden bg-bg relative">
       <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-bg to-transparent z-10" />
       <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-bg to-transparent z-10" />
       
       <motion.div 
-        animate={{ x: [0, -1000] }}
-        transition={{ repeat: Infinity, duration: 30, ease: 'linear' }}
-        className="flex gap-20 items-center whitespace-nowrap"
+        animate={{ x: [0, -1200] }}
+        transition={{ repeat: Infinity, duration: 40, ease: 'linear' }}
+        className="flex gap-24 items-center whitespace-nowrap"
       >
         {[...tools, ...tools].map((tool, i) => (
-          <span key={i} className="text-4xl lg:text-6xl font-black text-white/5 uppercase tracking-tighter hover:text-brand/20 transition-colors cursor-default">
+          <span key={i} className="text-4xl lg:text-7xl font-black text-white/5 uppercase tracking-tighter hover:text-brand/30 transition-all duration-500 cursor-default">
             {tool}
           </span>
         ))}
       </motion.div>
     </div>
+  );
+};
+
+const SuccessProtocol = () => {
+  const steps = [
+    { name: 'Audit', desc: 'Deep-dive into current CRM bottlenecks and automation leakage.' },
+    { name: 'Architecture', desc: 'Designing the recursive logic stack and technical blueprints.' },
+    { name: 'Deployment', desc: 'Seamless integration of GHL, Zapier, and API protocols.' },
+    { name: 'Optimization', desc: 'Real-time performance tuning and scaling architecture.' },
+  ];
+
+  return (
+    <section id="architecture" className="py-32 px-8 bg-surface/50 border-y border-line overflow-hidden relative">
+      <div className="max-w-[1440px] mx-auto">
+        <div className="flex flex-col lg:flex-row gap-24 items-start">
+          <div className="lg:w-1/3 sticky top-32 space-y-6">
+            <span className="text-[10px] font-black tracking-[0.4em] text-brand uppercase">The Protocol</span>
+            <h2 className="text-4xl lg:text-6xl font-black uppercase tracking-tighter leading-none text-white">
+              Systematic <br /><span className="text-white/20">Scaling.</span>
+            </h2>
+            <p className="text-white/40 text-sm leading-relaxed max-w-xs">
+              Every agency has a ceiling. I build the technical ladders to help you break through them.
+            </p>
+          </div>
+          <div className="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-1 px-1 bg-white/5 border border-white/5 rounded-[2rem] overflow-hidden">
+            {steps.map((step, i) => (
+              <div key={i} className="bg-bg p-12 space-y-8 group hover:bg-white/[0.02] transition-colors">
+                <span className="text-8xl font-black text-white/[0.02] group-hover:text-brand/5 transition-colors">0{i+1}</span>
+                <div className="space-y-4">
+                  <h3 className="text-xl font-bold uppercase tracking-widest text-white group-hover:text-brand transition-colors">{step.name}</h3>
+                  <p className="text-sm text-white/40 leading-relaxed">{step.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
 
@@ -537,6 +591,7 @@ export default function App() {
       <Hero />
       <Marquee />
       <Expertise />
+      <SuccessProtocol />
       <Metrics />
       <Testimonials />
       <ContactArea />
