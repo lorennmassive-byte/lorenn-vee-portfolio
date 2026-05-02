@@ -188,7 +188,7 @@ const Hero = () => {
             </div>
 
             <img 
-              src="https://raw.githubusercontent.com/lorennmassive-byte/lorenn-vee-portfolio/main/portrait%20(1).png"
+              src="https://github.com/lorennmassive-byte/lorenn-vee-portfolio/blob/main/src/IMG_0837.JPG?raw=true"
               alt="Lorenn Vee" 
               className="w-full h-full object-cover grayscale brightness-90 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-1000 scale-110 group-hover:scale-100"
               referrerPolicy="no-referrer"
