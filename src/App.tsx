@@ -188,9 +188,9 @@ const Hero = () => {
             </div>
 
             <img 
-              src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1000&h=1333"
-              alt="High-Tech Workstation" 
-              className="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-1000 scale-110 group-hover:scale-100 mt-6"
+              src="https://raw.githubusercontent.com/lorennmassive-byte/lorenn-vee-portfolio/aac74eae05cb88eb7c1781c519c054543a39a94a/IMG_0837.JPG"
+              alt="Lorenn Vee" 
+              className="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-1000 scale-110 group-hover:scale-100"
               referrerPolicy="no-referrer"
             />
             
@@ -203,7 +203,7 @@ const Hero = () => {
                />
                
                {/* Metadata Scanning Tags */}
-               <div className="absolute top-12 left-12 space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+               <div className="absolute top-12 left-12 space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-left">
                   <div className="px-2 py-1 bg-brand/20 border border-brand/40 rounded text-[6px] font-black uppercase text-brand">V_IDENTITY_VERIFIED</div>
                   <div className="px-2 py-1 bg-white/5 border border-white/10 rounded text-[6px] font-black uppercase text-white/40">S_LOC: REMOTE_OPS</div>
                </div>
@@ -216,19 +216,19 @@ const Hero = () => {
 
             {/* Status Overlay */}
             <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex items-center justify-center pointer-events-none opacity-20 group-hover:opacity-5 transition-opacity">
-               <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-white/5 rotate-90 whitespace-nowrap">UPLOAD_PENDING</span>
+               <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-white/5 rotate-90 whitespace-nowrap">SYSTEM_ACTIVE</span>
             </div>
 
-            {/* Overlay Info Card */}
-            <div className="absolute bottom-10 left-10 right-10 glass p-6 rounded-3xl translate-y-2 group-hover:translate-y-0 transition-all duration-500">
-              <div className="flex justify-between items-center mb-4">
-                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-brand">Access status</span>
+            {/* Overlay Info Card - Repositioned to be less obstructive */}
+            <div className="absolute bottom-6 left-6 right-6 lg:bottom-10 lg:left-10 lg:right-10 glass p-5 rounded-2xl opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-700 backdrop-blur-xl border border-white/10">
+              <div className="flex justify-between items-center mb-3">
+                <span className="text-[9px] font-black uppercase tracking-[0.3em] text-brand text-left">Access status</span>
                 <div className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 bg-accent rounded-full animate-pulse" />
-                  <span className="text-[9px] font-bold uppercase tracking-[0.1em] text-accent">Active Protocol</span>
+                  <div className="w-1 h-1 bg-accent rounded-full animate-pulse" />
+                  <span className="text-[8px] font-bold uppercase tracking-[0.1em] text-accent text-left">Active</span>
                 </div>
               </div>
-              <p className="text-xs text-white/50 font-medium leading-relaxed italic">
+              <p className="text-[10px] text-white/50 font-medium leading-tight italic text-left">
                 "Scaling agencies through algorithmic precision & strategic architecture."
               </p>
             </div>
