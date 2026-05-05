@@ -117,13 +117,23 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center pt-32 pb-20 px-8 overflow-hidden">
       {/* Background Ambience */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none -z-10">
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10 overflow-hidden">
         <div className="absolute top-[10%] -left-[10%] w-[50%] h-[50%] bg-brand/10 blur-[160px] rounded-full animate-pulse" />
         <div className="absolute bottom-[10%] -right-[10%] w-[50%] h-[50%] bg-accent/5 blur-[160px] rounded-full" />
+        
+        {/* Large subtle portrait background */}
+        <div className="absolute -right-[15%] top-0 w-full h-full opacity-[0.08] grayscale brightness-50">
+          <img 
+            src="https://images.unsplash.com/photo-1547027072-332f09bd6bb3?auto=format&fit=crop&q=80&w=1470" 
+            alt="" 
+            className="w-full h-full object-cover object-center translate-x-1/4 scale-125"
+            referrerPolicy="no-referrer"
+          />
+        </div>
       </div>
 
       <div className="max-w-[1440px] mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-        <div className="lg:col-span-8 space-y-10">
+        <div className="lg:col-span-8 space-y-10 order-2 lg:order-1">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -131,6 +141,21 @@ const Hero = () => {
           >
             <div className="w-1.5 h-1.5 bg-accent rounded-full animate-ping" />
             <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-accent">Active Protocol: Scaling High-Ticket Agencies</span>
+          </motion.div>
+
+          {/* Mobile Design Image */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="lg:hidden w-full aspect-square max-w-[300px] mx-auto relative rounded-3xl overflow-hidden border border-white/10"
+          >
+            <img 
+              src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1470" 
+              alt="Design Concept" 
+              className="w-full h-full object-cover"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60" />
           </motion.div>
 
           <motion.h1 
@@ -188,9 +213,9 @@ const Hero = () => {
             </div>
 
             <img 
-              src="https://github.com/lorennmassive-byte/lorenn-vee-portfolio/blob/main/src/IMG_0837.JPG?raw=true"
-              alt="Lorenn Vee" 
-              className="w-full h-full object-cover grayscale brightness-90 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-1000 scale-110 group-hover:scale-100"
+              src="https://images.unsplash.com/photo-1581291518066-b3334812f4ef?auto=format&fit=crop&q=80&w=1470"
+              alt="Design Workspace" 
+              className="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-1000 scale-110 group-hover:scale-100"
               referrerPolicy="no-referrer"
             />
             
@@ -405,8 +430,17 @@ const ContactArea = () => {
 
   return (
     <section id="contact" className="py-40 px-8 relative overflow-hidden">
-      {/* Decorative Radial */}
+      {/* Decorative Radial & Image Background */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] aspect-square bg-brand/5 blur-[200px] -z-10 rounded-full" />
+      
+      <div className="absolute -left-[20%] bottom-0 w-[60%] h-[60%] opacity-[0.05] grayscale brightness-50 -z-10 overflow-hidden pointer-events-none">
+        <img 
+          src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=1470" 
+          alt="" 
+          className="w-full h-full object-cover object-center translate-x-[-1/4] scale-125"
+          referrerPolicy="no-referrer"
+        />
+      </div>
 
       <div className="max-w-[1440px] mx-auto text-center space-y-20">
         <div className="space-y-6">
