@@ -45,7 +45,7 @@ const Nav = () => {
           animate={{ opacity: 1, x: 0 }}
           className="flex flex-col leading-none group cursor-pointer"
         >
-          <span className="text-2xl font-black tracking-tighter text-white uppercase leading-none group-hover:text-brand transition-colors">Lorenn Vee</span>
+          <span className="text-2xl font-black tracking-tighter text-slate-900 uppercase leading-none group-hover:text-brand transition-colors">Lorenn Vee</span>
           <span className="text-[9px] font-bold text-brand uppercase tracking-[0.4em] mt-2 brightness-125">GHL Solution Architect</span>
         </motion.div>
 
@@ -58,7 +58,7 @@ const Nav = () => {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
-              className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/40 hover:text-white transition-all relative group"
+              className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 hover:text-slate-900 transition-all relative group"
             >
               {link.name}
               <span className="absolute -bottom-2 left-0 w-0 h-px bg-brand transition-all group-hover:w-full" />
@@ -68,14 +68,14 @@ const Nav = () => {
             href="#contact"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="px-8 py-3 bg-white text-bg rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-brand hover:text-white transition-all shadow-[0_0_30px_rgba(255,255,255,0.1)] active:scale-95"
+            className="px-8 py-3 bg-slate-900 text-bg rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-brand hover:text-white transition-all shadow-[0_20px_40px_rgba(0,0,0,0.1)] active:scale-95"
           >
             Initiate Contact
           </motion.a>
         </div>
 
         {/* Mobile Toggle */}
-        <button className="lg:hidden text-white/60 p-2 glass rounded-full" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+        <button className="lg:hidden text-slate-400 p-2 glass rounded-full" onClick={() => setIsMenuOpen(!isMenuOpen)}>
           {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
@@ -94,7 +94,7 @@ const Nav = () => {
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsMenuOpen(false)}
-                className="text-4xl font-black uppercase tracking-tighter hover:text-brand transition-colors text-white"
+                className="text-4xl font-black uppercase tracking-tighter hover:text-brand transition-colors text-slate-900"
               >
                 {link.name}
               </a>
@@ -121,7 +121,7 @@ const Hero = () => {
         <div className="absolute top-[10%] -left-[10%] w-[50%] h-[50%] bg-brand/10 blur-[160px] rounded-full animate-pulse" />
         <div className="absolute bottom-[10%] -right-[10%] w-[50%] h-[50%] bg-accent/5 blur-[160px] rounded-full" />
         
-        <div className="absolute -right-[15%] top-0 w-full h-full opacity-[0.25] grayscale-0 brightness-110 mix-blend-screen leading-none">
+        <div className="absolute -right-[15%] top-0 w-full h-full opacity-[0.4] grayscale-0 brightness-110 mix-blend-multiply leading-none">
           <img 
             src="https://raw.githubusercontent.com/lorennmassive-byte/lorenn-vee-portfolio/a4dab7dea79779e5f6344c8bb8e95b83897f0d39/IMG_20241216_135201.jpg" 
             alt="" 
@@ -136,7 +136,7 @@ const Hero = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-3 px-4 py-2 glass rounded-full"
+            className="inline-flex items-center gap-3 px-4 py-2 bg-slate-50 border border-slate-200 rounded-full"
           >
             <div className="w-1.5 h-1.5 bg-brand rounded-full animate-ping" />
             <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand">Active Protocol: Scaling High-Ticket Agencies</span>
@@ -145,7 +145,7 @@ const Hero = () => {
           <motion.div 
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="lg:hidden w-full aspect-square max-w-[300px] mx-auto relative rounded-3xl overflow-hidden border border-brand/20 shadow-[0_20px_50px_rgba(99,102,241,0.2)] leading-none"
+            className="lg:hidden w-full aspect-square max-w-[300px] mx-auto relative rounded-3xl overflow-hidden border border-brand/10 shadow-[0_20px_50px_rgba(99,102,241,0.1)] leading-none"
           >
             <img 
               src="https://raw.githubusercontent.com/lorennmassive-byte/lorenn-vee-portfolio/a4dab7dea79779e5f6344c8bb8e95b83897f0d39/IMG_20241216_135201.jpg" 
@@ -160,17 +160,18 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-[12vw] lg:text-[9vw] font-black tracking-[-0.04em] leading-[0.88] uppercase text-white"
+            className="text-[10vw] lg:text-[7vw] font-black tracking-[-0.04em] leading-[0.9] uppercase text-slate-900"
           >
-            Elite <span className="text-white/20">Operations</span> <br />
-            <span className="text-brand italic font-serif lowercase tracking-tight">High-Impact</span> Results.
+            Scale Your <span className="text-slate-200">Agency</span> <br />
+            with <span className="text-brand italic font-serif lowercase tracking-tight">Custom GHL</span> <br />
+            Architectures <span className="opacity-30">that Convert.</span>
           </motion.h1>
 
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="text-lg lg:text-2xl text-white/50 max-w-2xl leading-relaxed font-medium"
+            className="text-lg lg:text-2xl text-slate-500 max-w-2xl leading-relaxed font-medium"
           >
             I engineer GoHighLevel ecosystems that don't just "work"—they dominate. High-converting funnels, intelligent automation, and seamless CRM migrations for visionary agencies.
           </motion.p>
@@ -184,11 +185,11 @@ const Hero = () => {
             <a href="#contact" className="px-10 py-5 bg-brand text-white rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] flex items-center gap-4 hover:scale-105 transition-all shadow-[0_20px_50px_rgba(99,102,241,0.2)]">
               Secure Availability <ArrowRight size={16} />
             </a>
-            <div className="flex items-center gap-4 px-8 py-5 glass rounded-2xl">
-              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/40">Portfolio Archive</span>
+            <div className="flex items-center gap-4 px-8 py-5 bg-slate-50 border border-slate-200 rounded-2xl">
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Portfolio Archive</span>
               <div className="flex gap-2">
                 {[1, 2, 3].map(i => (
-                  <div key={i} className="w-1.5 h-1.5 bg-white/20 rounded-full" />
+                  <div key={i} className="w-1.5 h-1.5 bg-slate-200 rounded-full" />
                 ))}
               </div>
             </div>
@@ -201,13 +202,13 @@ const Hero = () => {
           transition={{ duration: 1.2, ease: [0.23, 1, 0.32, 1] }}
           className="lg:col-span-4 hidden lg:block relative"
         >
-          <div className="portrait-glow group relative border border-white/5 overflow-hidden">
+          <div className="portrait-glow group relative border border-slate-200 overflow-hidden">
             {/* Terminal Top Bar */}
-            <div className="absolute top-0 left-0 right-0 h-6 bg-white/5 backdrop-blur-md border-b border-white/10 flex items-center px-4 gap-1.5 z-20">
+            <div className="absolute top-0 left-0 right-0 h-6 bg-slate-900/5 backdrop-blur-md border-b border-slate-900/10 flex items-center px-4 gap-1.5 z-20">
               <div className="w-1.5 h-1.5 rounded-full bg-red-500/30" />
               <div className="w-1.5 h-1.5 rounded-full bg-yellow-500/30" />
               <div className="w-1.5 h-1.5 rounded-full bg-green-500/30" />
-              <span className="text-[6px] font-black tracking-widest text-white/30 uppercase ml-2 font-mono">Workstation.exe</span>
+              <span className="text-[6px] font-black tracking-widest text-slate-900/30 uppercase ml-2 font-mono">Workstation.exe</span>
             </div>
 
             <img 
@@ -225,11 +226,11 @@ const Hero = () => {
 
             {/* Status Overlay */}
             <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex items-center justify-center pointer-events-none opacity-20 group-hover:opacity-5 transition-opacity">
-               <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-white/5 rotate-90 whitespace-nowrap">SYSTEM_ACTIVE</span>
+               <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-slate-900/5 rotate-90 whitespace-nowrap">SYSTEM_ACTIVE</span>
             </div>
 
             {/* Overlay Info Card - Repositioned to be less obstructive */}
-            <div className="absolute bottom-6 left-6 right-6 lg:bottom-10 lg:left-10 lg:right-10 glass p-5 rounded-2xl opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-700 backdrop-blur-xl border border-white/10">
+            <div className="absolute bottom-6 left-6 right-6 lg:bottom-10 lg:left-10 lg:right-10 glass p-5 rounded-2xl opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-700 backdrop-blur-xl border border-slate-900/5">
               <div className="flex justify-between items-center mb-3">
                 <span className="text-[9px] font-black uppercase tracking-[0.3em] text-brand text-left">Access status</span>
                 <div className="flex items-center gap-2">
@@ -237,7 +238,7 @@ const Hero = () => {
                   <span className="text-[8px] font-bold uppercase tracking-[0.1em] text-accent text-left">Active</span>
                 </div>
               </div>
-              <p className="text-[10px] text-white/50 font-medium leading-tight italic text-left">
+              <p className="text-[10px] text-slate-500 font-medium leading-tight italic text-left">
                 "Scaling agencies through algorithmic precision & strategic architecture."
               </p>
             </div>
@@ -289,21 +290,21 @@ const Expertise = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
-            className="p-12 border border-white/[0.05] hover:bg-white/[0.02] transition-colors group relative overflow-hidden"
+            className="p-12 border border-slate-200 hover:bg-white transition-colors group relative overflow-hidden bg-white/40"
           >
             <div className="mb-12 opacity-40 group-hover:opacity-100 transition-opacity">
               {skill.icon}
             </div>
-            <span className="text-[9px] font-black tracking-[0.3em] text-white/30 uppercase block mb-4 group-hover:text-brand transition-colors">
+            <span className="text-[9px] font-black tracking-[0.3em] text-slate-400 uppercase block mb-4 group-hover:text-brand transition-colors">
               {skill.tag}
             </span>
-            <h3 className="text-2xl font-bold mb-6 group-hover:translate-x-2 transition-transform text-white">{skill.title}</h3>
-            <p className="text-white/40 leading-relaxed text-sm group-hover:text-white/70 transition-colors">
+            <h3 className="text-2xl font-bold mb-6 group-hover:translate-x-2 transition-transform text-slate-900">{skill.title}</h3>
+            <p className="text-slate-500 leading-relaxed text-sm group-hover:text-slate-700 transition-colors">
               {skill.desc}
             </p>
             
             {/* Grid Mask Background */}
-            <div className="absolute top-0 right-0 p-8 text-white/[0.02] -z-10 group-hover:text-white/[0.05] transition-colors">
+            <div className="absolute top-0 right-0 p-8 text-slate-100 -z-10 group-hover:text-slate-200 transition-colors">
               <span className="text-8xl font-black">0{i+1}</span>
             </div>
           </motion.div>
@@ -326,8 +327,8 @@ const Metrics = () => {
       <div className="max-w-[1440px] mx-auto flex flex-wrap justify-between gap-16 lg:gap-0">
         {data.map((item, i) => (
           <div key={i} className="flex-1 min-w-[200px] space-y-4">
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/20">{item.label}</span>
-            <p className={`text-6xl lg:text-7xl font-black tracking-tighter ${item.color}`}>{item.val}</p>
+            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-300">{item.label}</span>
+            <p className={`text-6xl lg:text-7xl font-black tracking-tighter ${item.color.includes('white') ? 'text-slate-900' : item.color}`}>{item.val}</p>
           </div>
         ))}
       </div>
@@ -359,11 +360,11 @@ const Testimonials = () => {
             className="flex flex-col gap-10"
           >
             <div className="w-12 h-0.5 bg-brand/40" />
-            <p className="text-3xl lg:text-4xl font-medium leading-[1.3] text-white/80 tracking-tight italic font-serif">
+            <p className="text-3xl lg:text-4xl font-medium leading-[1.3] text-slate-700 tracking-tight italic font-serif">
               "{item.text}"
             </p>
             <div>
-              <p className="text-sm font-black uppercase tracking-widest text-white">{item.name}</p>
+              <p className="text-sm font-black uppercase tracking-widest text-slate-900">{item.name}</p>
               <p className="text-[10px] font-bold uppercase tracking-[0.4em] text-brand/60 mt-2">{item.company}</p>
             </div>
           </motion.div>
@@ -417,7 +418,7 @@ const ContactArea = () => {
       {/* Decorative Radial & Image Background */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] aspect-square bg-brand/5 blur-[200px] -z-10 rounded-full" />
       
-      <div className="absolute -left-[20%] bottom-0 w-[60%] h-[60%] opacity-[0.2] grayscale-0 brightness-125 -z-10 overflow-hidden pointer-events-none mix-blend-screen leading-none">
+      <div className="absolute -left-[20%] bottom-0 w-[60%] h-[60%] opacity-[0.4] grayscale-0 brightness-125 -z-10 overflow-hidden pointer-events-none mix-blend-multiply leading-none">
         <img 
           src="https://raw.githubusercontent.com/lorennmassive-byte/lorenn-vee-portfolio/a4dab7dea79779e5f6344c8bb8e95b83897f0d39/IMG_20241216_135201.jpg" 
           alt="" 
@@ -429,46 +430,46 @@ const ContactArea = () => {
       <div className="max-w-[1440px] mx-auto text-center space-y-20">
         <div className="space-y-6">
           <span className="text-[10px] font-black tracking-[0.5em] text-brand uppercase">Open Communication Link</span>
-          <h2 className="text-[8vw] font-black uppercase tracking-tighter leading-none italic text-white flex flex-col items-center">
-             <span>Let's <span className="text-white/20">Dominate</span></span>
+          <h2 className="text-[8vw] font-black uppercase tracking-tighter leading-none italic text-slate-900 flex flex-col items-center">
+             <span>Let's <span className="text-slate-200">Dominate</span></span>
              <span>the Market.</span>
           </h2>
         </div>
 
-        <form onSubmit={handleSubmit} className="max-w-2xl mx-auto space-y-8 glass p-12 lg:p-20 rounded-[3rem]">
+        <form onSubmit={handleSubmit} className="max-w-2xl mx-auto space-y-8 bg-slate-50 border border-slate-200 p-12 lg:p-20 rounded-[3rem] shadow-[0_30px_100px_rgba(0,0,0,0.05)]">
           <div className="space-y-6 text-left">
             <div className="space-y-2">
-              <label className="text-[8px] font-black uppercase tracking-[0.4em] text-white/30 ml-2">Protocol: Identity</label>
+              <label className="text-[8px] font-black uppercase tracking-[0.4em] text-slate-400 ml-2">Protocol: Identity</label>
               <input 
                 type="text" 
                 value={formData.name}
                 onChange={e => setFormData({...formData, name: e.target.value})}
                 placeholder="Name or Agency"
-                className="w-full bg-white/[0.05] border border-white/5 rounded-2xl p-5 text-sm focus:border-brand focus:outline-none transition-all placeholder:text-white/10 text-white"
+                className="w-full bg-white border border-slate-200 rounded-2xl p-5 text-sm focus:border-brand focus:outline-none transition-all placeholder:text-slate-300 text-slate-900"
               />
               {errors.name && <span className="text-[9px] text-brand font-bold uppercase tracking-widest ml-2">{errors.name}</span>}
             </div>
 
             <div className="space-y-2">
-              <label className="text-[8px] font-black uppercase tracking-[0.4em] text-white/30 ml-2">Protocol: Transmission Address</label>
+              <label className="text-[8px] font-black uppercase tracking-[0.4em] text-slate-400 ml-2">Protocol: Transmission Address</label>
               <input 
                 type="email" 
                 value={formData.email}
                 onChange={e => setFormData({...formData, email: e.target.value})}
                 placeholder="email@example.com"
-                className="w-full bg-white/[0.05] border border-white/5 rounded-2xl p-5 text-sm focus:border-brand focus:outline-none transition-all placeholder:text-white/10 text-white"
+                className="w-full bg-white border border-slate-200 rounded-2xl p-5 text-sm focus:border-brand focus:outline-none transition-all placeholder:text-slate-300 text-slate-900"
               />
               {errors.email && <span className="text-[9px] text-brand font-bold uppercase tracking-widest ml-2">{errors.email}</span>}
             </div>
 
             <div className="space-y-2">
-              <label className="text-[8px] font-black uppercase tracking-[0.4em] text-white/30 ml-2">Protocol: Strategic Detail</label>
+              <label className="text-[8px] font-black uppercase tracking-[0.4em] text-slate-400 ml-2">Protocol: Strategic Detail</label>
               <textarea 
                 rows={4}
                 value={formData.message}
                 onChange={e => setFormData({...formData, message: e.target.value})}
                 placeholder="Briefly describe the bottleneck..."
-                className="w-full bg-white/[0.05] border border-white/5 rounded-2xl p-5 text-sm focus:border-brand focus:outline-none transition-all placeholder:text-white/10 resize-none text-white focus:bg-white/[0.08]"
+                className="w-full bg-white border border-slate-200 rounded-2xl p-5 text-sm focus:border-brand focus:outline-none transition-all placeholder:text-slate-300 resize-none text-slate-900 focus:ring-2 focus:ring-brand/5"
               />
               {errors.message && <span className="text-[9px] text-brand font-bold uppercase tracking-widest ml-2">{errors.message}</span>}
             </div>
@@ -477,7 +478,7 @@ const ContactArea = () => {
           <button 
             type="submit" 
             disabled={isSubmitting}
-            className="w-full py-6 bg-white text-bg rounded-2xl text-[10px] font-black uppercase tracking-[0.3em] flex items-center justify-center gap-4 hover:bg-brand hover:text-white transition-all disabled:opacity-50"
+            className="w-full py-6 bg-slate-900 text-white rounded-2xl text-[10px] font-black uppercase tracking-[0.3em] flex items-center justify-center gap-4 hover:bg-brand hover:text-white transition-all disabled:opacity-50 shadow-[0_20px_40px_rgba(0,0,0,0.1)]"
           >
             {isSubmitting ? (
               <span className="w-5 h-5 border-2 border-bg border-t-white rounded-full animate-spin" />
@@ -498,16 +499,16 @@ const Footer = () => {
     <footer className="py-20 px-8 border-t border-line">
       <div className="max-w-[1440px] mx-auto flex flex-col lg:flex-row justify-between items-start gap-16 lg:gap-0">
         <div className="space-y-4">
-          <div className="flex items-center gap-4 text-white/80">
+          <div className="flex items-center gap-4 text-slate-800">
             <MousePointer2 size={16} className="text-brand" />
             <span className="text-[10px] font-black uppercase tracking-[0.3em]">Lorenn Vee</span>
           </div>
-          <p className="text-xs text-white/20 max-w-xs leading-loose">
+          <p className="text-xs text-slate-400 max-w-xs leading-loose">
             High-Performance GHL Operations & Strategy. We build for long-term leverage and strategic precision.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 lg:gap-24 text-[10px] font-bold uppercase tracking-[0.3em] text-white/40">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 lg:gap-24 text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
           <div className="space-y-6">
             <span className="text-brand block">Archive</span>
             <a href="#" className="block hover:text-brand transition-colors">Lab</a>
@@ -521,12 +522,12 @@ const Footer = () => {
           <div className="space-y-6">
             <span className="text-brand block">Status</span>
             <span className="block text-accent">Active</span>
-            <span className="block text-white/20">Q3 Open</span>
+            <span className="block text-slate-200">Q3 Open</span>
           </div>
         </div>
       </div>
       
-      <div className="max-w-[1440px] mx-auto mt-20 pt-10 border-t border-white/[0.05] flex justify-between items-center text-[8px] font-black uppercase tracking-[0.4em] text-white/10">
+      <div className="max-w-[1440px] mx-auto mt-20 pt-10 border-t border-slate-100 flex justify-between items-center text-[8px] font-black uppercase tracking-[0.4em] text-slate-200">
         <span>&copy; 2024 LORENN VEE SOLUTIONS. CC01-X.</span>
         <div className="flex gap-10">
           <span>San Francisco / Remote</span>
@@ -551,7 +552,7 @@ const Marquee = () => {
         className="flex gap-24 items-center whitespace-nowrap"
       >
         {[...tools, ...tools].map((tool, i) => (
-          <span key={i} className="text-4xl lg:text-7xl font-black text-white/5 uppercase tracking-tighter hover:text-brand/30 transition-all duration-500 cursor-default">
+          <span key={i} className="text-4xl lg:text-7xl font-black text-slate-100 uppercase tracking-tighter hover:text-brand/30 transition-all duration-500 cursor-default">
             {tool}
           </span>
         ))}
@@ -574,20 +575,20 @@ const SuccessProtocol = () => {
         <div className="flex flex-col lg:flex-row gap-24 items-start">
           <div className="lg:w-1/3 sticky top-32 space-y-6">
             <span className="text-[10px] font-black tracking-[0.4em] text-brand uppercase">The Protocol</span>
-            <h2 className="text-4xl lg:text-6xl font-black uppercase tracking-tighter leading-none text-white">
-              Systematic <br /><span className="text-white/20">Scaling.</span>
+            <h2 className="text-4xl lg:text-6xl font-black uppercase tracking-tighter leading-none text-slate-900">
+              Systematic <br /><span className="text-slate-200">Scaling.</span>
             </h2>
-            <p className="text-white/40 text-sm leading-relaxed max-w-xs">
+            <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
               Every agency has a ceiling. I build the technical ladders to help you break through them.
             </p>
           </div>
-          <div className="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-1 px-1 bg-white/5 border border-white/5 rounded-[2rem] overflow-hidden">
+          <div className="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-1 px-1 bg-slate-100 border border-slate-200 rounded-[2rem] overflow-hidden">
             {steps.map((step, i) => (
-              <div key={i} className="bg-bg p-12 space-y-8 group hover:bg-white/[0.02] transition-colors">
-                <span className="text-8xl font-black text-white/[0.02] group-hover:text-brand/5 transition-colors">0{i+1}</span>
+              <div key={i} className="bg-bg p-12 space-y-8 group hover:bg-slate-50 transition-colors">
+                <span className="text-8xl font-black text-slate-50 group-hover:text-brand/5 transition-colors">0{i+1}</span>
                 <div className="space-y-4">
-                  <h3 className="text-xl font-bold uppercase tracking-widest text-white group-hover:text-brand transition-colors">{step.name}</h3>
-                  <p className="text-sm text-white/40 leading-relaxed">{step.desc}</p>
+                  <h3 className="text-xl font-bold uppercase tracking-widest text-slate-900 group-hover:text-brand transition-colors">{step.name}</h3>
+                  <p className="text-sm text-slate-400 leading-relaxed">{step.desc}</p>
                 </div>
               </div>
             ))}
@@ -604,7 +605,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="bg-bg text-white font-sans selection:bg-brand/30 selection:text-brand overflow-x-hidden">
+    <div className="bg-bg text-slate-900 font-sans selection:bg-brand/10 selection:text-brand overflow-x-hidden">
       <Nav />
       <Hero />
       <Marquee />
@@ -622,8 +623,8 @@ export default function App() {
         transition={{ delay: 2 }}
         className="fixed bottom-10 left-10 hidden md:flex flex-col items-center gap-4 group"
       >
-        <span className="text-[8px] font-black uppercase tracking-[0.5em] text-white/20 vertical-rl transform rotate-180">Scroll</span>
-        <div className="w-px h-12 bg-white/10 relative overflow-hidden">
+        <span className="text-[8px] font-black uppercase tracking-[0.5em] text-slate-200 vertical-rl transform rotate-180">Scroll</span>
+        <div className="w-px h-12 bg-slate-100 relative overflow-hidden">
           <motion.div 
             animate={{ y: [0, 48] }}
             transition={{ repeat: Infinity, duration: 1.5, ease: 'linear' }}

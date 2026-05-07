@@ -8,25 +8,25 @@
   
   --color-brand: #6366f1;
   --color-accent: #10b981;
-  --color-bg: #050505;
-  --color-surface: #0a0a0a;
-  --color-line: rgba(255, 255, 255, 0.08);
+  --color-bg: #ffffff;
+  --color-surface: #f8fafc;
+  --color-line: rgba(0, 0, 0, 0.08);
 }
 
 @layer base {
   body {
-    @apply bg-bg text-white/90 selection:bg-brand/30 selection:text-white;
+    @apply bg-bg text-slate-900 selection:bg-brand/10 selection:text-brand;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 }
 
 .glass {
-  @apply bg-white/[0.03] backdrop-blur-xl border border-white/[0.05];
+  @apply bg-slate-500/[0.03] backdrop-blur-xl border border-black/[0.05];
 }
 
 .portrait-glow {
   @apply relative overflow-hidden rounded-[4rem];
-  box-shadow: 0 0 80px -20px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 40px 100px -20px rgba(99, 102, 241, 0.15);
 }
 
 .portrait-glow::after {
