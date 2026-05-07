@@ -121,12 +121,11 @@ const Hero = () => {
         <div className="absolute top-[10%] -left-[10%] w-[50%] h-[50%] bg-brand/10 blur-[160px] rounded-full animate-pulse" />
         <div className="absolute bottom-[10%] -right-[10%] w-[50%] h-[50%] bg-accent/5 blur-[160px] rounded-full" />
         
-        {/* Large subtle portrait background */}
-        <div className="absolute -right-[15%] top-0 w-full h-full opacity-[0.08] grayscale brightness-50">
+        <div className="absolute -right-[15%] top-0 w-full h-full opacity-[0.25] grayscale-0 brightness-110 mix-blend-screen leading-none">
           <img 
-            src="https://images.unsplash.com/photo-1547027072-332f09bd6bb3?auto=format&fit=crop&q=80&w=1470" 
+            src="https://raw.githubusercontent.com/lorennmassive-byte/lorenn-vee-portfolio/03f2db5dc125f35f19f1054c000419636232cc17/pic%20background.png" 
             alt="" 
-            className="w-full h-full object-cover object-center translate-x-1/4 scale-125"
+            className="w-full h-full object-cover object-center translate-x-1/4 scale-125 blur-[1px]"
             referrerPolicy="no-referrer"
           />
         </div>
@@ -139,23 +138,22 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             className="inline-flex items-center gap-3 px-4 py-2 glass rounded-full"
           >
-            <div className="w-1.5 h-1.5 bg-accent rounded-full animate-ping" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-accent">Active Protocol: Scaling High-Ticket Agencies</span>
+            <div className="w-1.5 h-1.5 bg-brand rounded-full animate-ping" />
+            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand">Active Protocol: Scaling High-Ticket Agencies</span>
           </motion.div>
 
-          {/* Mobile Design Image */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="lg:hidden w-full aspect-square max-w-[300px] mx-auto relative rounded-3xl overflow-hidden border border-white/10"
+            className="lg:hidden w-full aspect-square max-w-[300px] mx-auto relative rounded-3xl overflow-hidden border border-brand/20 shadow-[0_20px_50px_rgba(99,102,241,0.2)] leading-none"
           >
             <img 
-              src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1470" 
-              alt="Design Concept" 
+              src="https://raw.githubusercontent.com/lorennmassive-byte/lorenn-vee-portfolio/03f2db5dc125f35f19f1054c000419636232cc17/pic%20background.png" 
+              alt="Lorenn Vee" 
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-40" />
           </motion.div>
 
           <motion.h1 
@@ -213,30 +211,16 @@ const Hero = () => {
             </div>
 
             <img 
-              src="https://images.unsplash.com/photo-1581291518066-b3334812f4ef?auto=format&fit=crop&q=80&w=1470"
-              alt="Design Workspace" 
-              className="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-1000 scale-110 group-hover:scale-100"
+              src="https://raw.githubusercontent.com/lorennmassive-byte/lorenn-vee-portfolio/03f2db5dc125f35f19f1054c000419636232cc17/pic%20background.png"
+              alt="Lorenn Vee" 
+              className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110 grayscale-0 brightness-110"
               referrerPolicy="no-referrer"
             />
             
-            {/* Elite Technical Overlay */}
-            <div className="absolute inset-0 border border-brand/20 rounded-[4rem] pointer-events-none overflow-hidden">
-               <motion.div 
-                 animate={{ y: ['0%', '100%', '0%'] }}
-                 transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
-                 className="w-full h-px bg-brand/50 shadow-[0_0_15px_rgba(99,102,241,0.8)] z-10"
-               />
-               
-               {/* Metadata Scanning Tags */}
-               <div className="absolute top-12 left-12 space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-left">
-                  <div className="px-2 py-1 bg-brand/20 border border-brand/40 rounded text-[6px] font-black uppercase text-brand">V_IDENTITY_VERIFIED</div>
-                  <div className="px-2 py-1 bg-white/5 border border-white/10 rounded text-[6px] font-black uppercase text-white/40">S_LOC: REMOTE_OPS</div>
-               </div>
-
-               <div className="absolute top-0 left-0 w-20 h-20 border-t-2 border-l-2 border-brand/40 m-8 rounded-tl-2xl" />
-               <div className="absolute top-0 right-0 w-20 h-20 border-t-2 border-r-2 border-brand/40 m-8 rounded-tr-2xl" />
-               <div className="absolute bottom-0 left-0 w-20 h-20 border-b-2 border-l-2 border-brand/40 m-8 rounded-bl-2xl" />
-               <div className="absolute bottom-0 right-0 w-20 h-20 border-b-2 border-r-2 border-brand/40 m-8 rounded-br-2xl" />
+            {/* Minimal Overlay */}
+            <div className="absolute inset-0 border border-brand/20 pointer-events-none overflow-hidden">
+               <div className="absolute top-0 left-0 w-20 h-20 border-t border-l border-brand/40 m-8 rounded-tl-2xl opacity-40" />
+               <div className="absolute bottom-0 right-0 w-20 h-20 border-b border-r border-brand/40 m-8 rounded-br-2xl opacity-40" />
             </div>
 
             {/* Status Overlay */}
@@ -433,11 +417,11 @@ const ContactArea = () => {
       {/* Decorative Radial & Image Background */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] aspect-square bg-brand/5 blur-[200px] -z-10 rounded-full" />
       
-      <div className="absolute -left-[20%] bottom-0 w-[60%] h-[60%] opacity-[0.05] grayscale brightness-50 -z-10 overflow-hidden pointer-events-none">
+      <div className="absolute -left-[20%] bottom-0 w-[60%] h-[60%] opacity-[0.2] grayscale-0 brightness-125 -z-10 overflow-hidden pointer-events-none mix-blend-screen leading-none">
         <img 
-          src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=1470" 
+          src="https://raw.githubusercontent.com/lorennmassive-byte/lorenn-vee-portfolio/03f2db5dc125f35f19f1054c000419636232cc17/pic%20background.png" 
           alt="" 
-          className="w-full h-full object-cover object-center translate-x-[-1/4] scale-125"
+          className="w-full h-full object-cover object-center -scale-x-[1.1] opacity-40"
           referrerPolicy="no-referrer"
         />
       </div>
