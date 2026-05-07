@@ -123,7 +123,7 @@ const Hero = () => {
         
         <div className="absolute -right-[15%] top-0 w-full h-full opacity-[0.25] grayscale-0 brightness-110 mix-blend-screen leading-none">
           <img 
-            src="https://raw.githubusercontent.com/lorennmassive-byte/lorenn-vee-portfolio/03f2db5dc125f35f19f1054c000419636232cc17/pic%20background.png" 
+            src="https://raw.githubusercontent.com/lorennmassive-byte/lorenn-vee-portfolio/a4dab7dea79779e5f6344c8bb8e95b83897f0d39/IMG_20241216_135201.jpg" 
             alt="" 
             className="w-full h-full object-cover object-center translate-x-1/4 scale-125 blur-[1px]"
             referrerPolicy="no-referrer"
@@ -148,7 +148,7 @@ const Hero = () => {
             className="lg:hidden w-full aspect-square max-w-[300px] mx-auto relative rounded-3xl overflow-hidden border border-brand/20 shadow-[0_20px_50px_rgba(99,102,241,0.2)] leading-none"
           >
             <img 
-              src="https://raw.githubusercontent.com/lorennmassive-byte/lorenn-vee-portfolio/03f2db5dc125f35f19f1054c000419636232cc17/pic%20background.png" 
+              src="https://raw.githubusercontent.com/lorennmassive-byte/lorenn-vee-portfolio/a4dab7dea79779e5f6344c8bb8e95b83897f0d39/IMG_20241216_135201.jpg" 
               alt="Lorenn Vee" 
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
@@ -211,7 +211,7 @@ const Hero = () => {
             </div>
 
             <img 
-              src="https://raw.githubusercontent.com/lorennmassive-byte/lorenn-vee-portfolio/03f2db5dc125f35f19f1054c000419636232cc17/pic%20background.png"
+              src="https://raw.githubusercontent.com/lorennmassive-byte/lorenn-vee-portfolio/a4dab7dea79779e5f6344c8bb8e95b83897f0d39/IMG_20241216_135201.jpg"
               alt="Lorenn Vee" 
               className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110 grayscale-0 brightness-110"
               referrerPolicy="no-referrer"
@@ -419,7 +419,7 @@ const ContactArea = () => {
       
       <div className="absolute -left-[20%] bottom-0 w-[60%] h-[60%] opacity-[0.2] grayscale-0 brightness-125 -z-10 overflow-hidden pointer-events-none mix-blend-screen leading-none">
         <img 
-          src="https://raw.githubusercontent.com/lorennmassive-byte/lorenn-vee-portfolio/03f2db5dc125f35f19f1054c000419636232cc17/pic%20background.png" 
+          src="https://raw.githubusercontent.com/lorennmassive-byte/lorenn-vee-portfolio/a4dab7dea79779e5f6344c8bb8e95b83897f0d39/IMG_20241216_135201.jpg" 
           alt="" 
           className="w-full h-full object-cover object-center -scale-x-[1.1] opacity-40"
           referrerPolicy="no-referrer"
