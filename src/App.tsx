@@ -341,7 +341,7 @@ const Testimonials = () => {
     {
       name: 'Julian Reed',
       company: 'CEO, NEXUS ARCHITECTURE',
-      text: 'Lorenn doesn\'t just set up templates. He builds ecosystems that anticipate our needs. Our churn dropped by 15% in the first quarter post-overhaul.',
+      text: "Lorenn didn't just fix our tech; he gave our team their time back. Seeing our churn drop by 15% was the cherry on top of a much smoother daily workflow.",
     },
     {
       name: 'Sophia Chen',
@@ -430,9 +430,9 @@ const ContactArea = () => {
       <div className="max-w-[1440px] mx-auto text-center space-y-20">
         <div className="space-y-6">
           <span className="text-[10px] font-black tracking-[0.5em] text-brand uppercase">Open Communication Link</span>
-          <h2 className="text-[8vw] font-black uppercase tracking-tighter leading-none italic text-slate-900 flex flex-col items-center">
-             <span>Let's <span className="text-slate-200">Dominate</span></span>
-             <span>the Market.</span>
+          <h2 className="text-[7vw] font-black uppercase tracking-tighter leading-none italic text-slate-900 flex flex-col items-center">
+             <span>Let's build <span className="text-slate-200">Something</span></span>
+             <span>Great <span className="text-brand">Together.</span></span>
           </h2>
         </div>
 
