@@ -17,6 +17,8 @@ import {
   ShieldCheck,
   MousePointer2
 } from 'lucide-react';
+// @ts-ignore
+import ghlWorkstation from './assets/images/ghl_screen_pc_only_1781584104085.jpg';
 
 // --- Components ---
 
@@ -121,10 +123,10 @@ const Hero = () => {
         <div className="absolute top-[10%] -left-[10%] w-[50%] h-[50%] bg-brand/10 blur-[160px] rounded-full animate-pulse" />
         <div className="absolute bottom-[10%] -right-[10%] w-[50%] h-[50%] bg-accent/5 blur-[160px] rounded-full" />
         
-        <div className="absolute -right-[15%] top-0 w-full h-full opacity-[0.4] grayscale-0 brightness-110 mix-blend-multiply leading-none">
+        <div className="absolute -right-[15%] top-0 w-full h-full opacity-[0.2] grayscale-0 brightness-105 mix-blend-multiply leading-none">
           <img 
-            src="https://raw.githubusercontent.com/lorennmassive-byte/lorenn-vee-portfolio/a4dab7dea79779e5f6344c8bb8e95b83897f0d39/IMG_20241216_135201.jpg" 
-            alt="" 
+            src={ghlWorkstation} 
+            alt="Custom GoHighLevel Workstation Dashboard" 
             className="w-full h-full object-cover object-center translate-x-1/4 scale-125 blur-[1px]"
             referrerPolicy="no-referrer"
           />
@@ -148,8 +150,8 @@ const Hero = () => {
             className="lg:hidden w-full aspect-square max-w-[300px] mx-auto relative rounded-3xl overflow-hidden border border-brand/10 shadow-[0_20px_50px_rgba(99,102,241,0.1)] leading-none"
           >
             <img 
-              src="https://raw.githubusercontent.com/lorennmassive-byte/lorenn-vee-portfolio/a4dab7dea79779e5f6344c8bb8e95b83897f0d39/IMG_20241216_135201.jpg" 
-              alt="Lorenn Vee" 
+              src={ghlWorkstation} 
+              alt="GoHighLevel Workstation Screen" 
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
             />
@@ -212,8 +214,8 @@ const Hero = () => {
             </div>
 
             <img 
-              src="https://raw.githubusercontent.com/lorennmassive-byte/lorenn-vee-portfolio/a4dab7dea79779e5f6344c8bb8e95b83897f0d39/IMG_20241216_135201.jpg"
-              alt="Lorenn Vee" 
+              src={ghlWorkstation}
+              alt="Custom GoHighLevel Workstation CRM Screen" 
               className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110 grayscale-0 brightness-110"
               referrerPolicy="no-referrer"
             />
@@ -418,9 +420,9 @@ const ContactArea = () => {
       {/* Decorative Radial & Image Background */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] aspect-square bg-brand/5 blur-[200px] -z-10 rounded-full" />
       
-      <div className="absolute -left-[20%] bottom-0 w-[60%] h-[60%] opacity-[0.4] grayscale-0 brightness-125 -z-10 overflow-hidden pointer-events-none mix-blend-multiply leading-none">
+      <div className="absolute -left-[20%] bottom-0 w-[60%] h-[60%] opacity-[0.2] grayscale-0 brightness-110 -z-10 overflow-hidden pointer-events-none mix-blend-multiply leading-none">
         <img 
-          src="https://raw.githubusercontent.com/lorennmassive-byte/lorenn-vee-portfolio/a4dab7dea79779e5f6344c8bb8e95b83897f0d39/IMG_20241216_135201.jpg" 
+          src={ghlWorkstation} 
           alt="" 
           className="w-full h-full object-cover object-center -scale-x-[1.1] opacity-40"
           referrerPolicy="no-referrer"
